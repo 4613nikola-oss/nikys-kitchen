@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Články a tipy | Koláč od Niky</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- NAVIGACE -->
+    <header class="main-navigation">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Koláč od Niky</a>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="index.html">Domů</a></li>
+                    
+                    <li class="dropdown">
+                        <a href="#">Recepty ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="slane.html">Slané</a></li>
+                            <li><a href="sladke.html">Sladké</a></li>
+                            <li><a href="napoje.html">Nápoje</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="clanky.html" class="active">Články</a></li>
+                    <li><a href="o-mne.html">O mně</a></li>
+                    <li><a href="kalkulacka.html">Kalkulačka</a></li>
+                    <li><a href="galerie.html">Galerie</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="site-wrapper">
+        <main>
+            <header style="margin-bottom: 30px;">
+                <h1 class="section-title" style="margin-bottom: 12px;">Články a užitečné tipy</h1>
+                <p style="color: var(--text-light, #666); font-size: 1.15rem; max-width: 640px;">
+                    Přečtěte si zajímavosti o zdravém pečení, vyváženém jídelníčku a tom, jak správně pracovat s energií z jídla.
+                </p>
+            </header>
+
+            <!-- FILTRY ČLÁNKŮ -->
+            <div class="articles-filter" style="display: flex; gap: 12px; margin-bottom: 30px; flex-wrap: wrap;">
+                <button class="calc-btn" style="padding: 8px 18px; font-size: 0.95rem; cursor: pointer;">Všechny články</button>
+                <button class="calc-btn btn-outline" style="padding: 8px 18px; font-size: 0.95rem; cursor: pointer;">Výživa & Zdraví</button>
+                <button class="calc-btn btn-outline" style="padding: 8px 18px; font-size: 0.95rem; cursor: pointer;">Pečení & Suroviny</button>
+            </div>
+
+            <!-- SEZNAM VŠECH ČLÁNKŮ -->
+            <div class="articles-grid">
+                
+                <!-- ČLÁNEK 1: KALORICKÁ KALKULAČKA -->
+                <article class="article-card">
+                    <div>
+                        <span class="article-date">27. srpna 2026 • Výživa & Zdraví</span>
+                        <h2 class="article-title">Jak správně počítat kalorie a nebát se jich</h2>
+                        <p class="article-text">
+                            Slyšeli jste už o BMR a TDEE? Ukážeme vám, co tyto zkratky znamenají, proč byste nikdy neměli jíst méně, než je váš bazální metabolismus, a jak vám naše nová interaktivní kalkulačka pomůže najít ideální cestu k udržitelnému hubnutí i energii na cvičení.
+                        </p>
+                    </div>
+                    <a href="kalkulacka.html" class="calc-btn">Vyzkoušet kalkulačku →</a>
+                </article>
+
+                <!-- ČLÁNEK 2: SYTIVÉ PEČENÍ -->
+                <article class="article-card">
+                    <div>
+                        <span class="article-date">15. srpna 2026 • Pečení & Suroviny</span>
+                        <h2 class="article-title">Tajomství sytivého pečení: Jak nahradit bílou mouku a cukr</h2>
+                        <p class="article-text">
+                            Pečení nemusí být hřích. Podívejte se na naše oblíbené tipy, jak do sladkých i slaných receptů zakomponovat více vlákniny, zdravých tuků a bílkovin, aniž by tím utrpěla skvělá chuť.
+                        </p>
+                    </div>
+                    <a href="#" class="calc-btn btn-outline">Přečíst článek →</a>
+                </article>
+
+                <!-- ČLÁNEK 3: POHODOM V KUCHYNI -->
+                <article class="article-card">
+                    <div>
+                        <span class="article-date">2. srpna 2026 • Výživa & Zdraví</span>
+                        <h2 class="article-title">Proč po některém jídle cítíme útlum a jak to změnit</h2>
+                        <p class="article-text">
+                            Pohled na to, jak různé potraviny ovlivňují naši energii během dne, jak správně kombinovat makroživiny a proč nás některé těžké obědy zbytečně připraví o produktivitu.
+                        </p>
+                    </div>
+                    <a href="#" class="calc-btn btn-outline">Přečíst článek →</a>
+                </article>
+
+                <!-- ČLÁNEK 4: KVÁSKOVÉ PEČENÍ -->
+                <article class="article-card">
+                    <div>
+                        <span class="article-date">20. července 2026 • Pečení & Suroviny</span>
+                        <h2 class="article-title">Domácí kvásek krok za krokem: Zvládne to opravdu každý</h2>
+                        <p class="article-text">
+                            Založit a udržet žitný kvásek není žádná černá magie. Ukážeme vám jednoduchý harmonogram krmení, péče a pár osvědčených triků pro ty nejlepší nadýchané bochníky.
+                        </p>
+                    </div>
+                    <a href="#" class="calc-btn btn-outline">Přečíst článek →</a>
+                </article>
+
+            </div>
+        </main>
+
+        <!-- PLNÝ SIDEBAR -->
+        <aside class="sidebar">
+            <div class="sidebar-widget">
+                <h3>O autorce</h3>
+                <p>Ahoj, jsem Nika! Vítám vás na svém blogu plném zdravých receptů, pečení s láskou a užitečných tipů pro vyvážený životní styl.</p>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>Tip týdne</h3>
+                <p>Neřeš jen kalorie. Důležitý je i sytící index jídla – kombinace bílkovin + vlákniny tě zasytí mnohem déle.</p>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>Oblíbené kategorie</h3>
+                <ul style="list-style: none; padding: 0; margin: 0; line-height: 2rem;">
+                    <li><a href="slane.html" style="text-decoration: none; color: var(--primary, #3b4d38);">Slané pečení & recepty</a></li>
+                    <li><a href="sladke.html" style="text-decoration: none; color: var(--primary, #3b4d38);">Zdravé sladkosti</a></li>
+                    <li><a href="kalkulacka.html" style="text-decoration: none; color: var(--primary, #3b4d38);">Fitness kalkulačka</a></li>
+                    <li><a href="galerie.html" style="text-decoration: none; color: var(--primary, #3b4d38);">Galerie inspirace</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>Newsletter</h3>
+                <p>Chceš recepty a tipy přímo do mailu?</p>
+                <input type="email" placeholder="tvuj@email.cz" style="width: 100%; padding: 8px; margin-top: 8px; border: 1px solid #e8e2d5; border-radius: 4px; box-sizing: border-box;">
+                <button class="calc-btn" style="width: 100%; margin-top: 10px; padding: 10px;">Odebírat</button>
+            </div>
+        </aside>
+    </div>
+
+    <!-- PATIČKA -->
+    <footer class="main-footer">
+        <p>&copy; 2026 Koláč od Niky. Všechna práva vyhrazena.</p>
+    </footer>
+
+    <!-- Tlačítko zpět nahoru -->
+    <a href="#" class="scroll-top-btn" title="Nahoru">↑</a>
+
+</body>
+</html>

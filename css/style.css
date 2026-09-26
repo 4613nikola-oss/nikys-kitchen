@@ -1,0 +1,485 @@
+:root {
+    --primary: #3d5233;
+    --primary-hover: #2e3e26;
+    --bg-color: #f7f5f0;
+    --card-bg: #ffffff;
+    --text: #2c2c2c;
+    --text-muted: #6b6b6b;
+    --border-color: #e3ded5;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-color);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* NAVIGACE */
+.main-navigation {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--card-bg);
+    border-bottom: 0.0625rem solid var(--border-color);
+    box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.03);
+}
+
+.nav-container {
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 1.25rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.nav-list { display: flex; gap: 1.5rem; }
+.nav-list a { font-weight: 500; font-size: 0.95rem; color: var(--text); transition: color 0.2s; }
+.nav-list a:hover, .nav-list a.active { color: var(--primary); }
+
+/* LAYOUT */
+.site-wrapper {
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.main-layout-with-aside {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+@media (max-width: 56.25rem) {
+    .main-layout-with-aside { grid-template-columns: 1fr; }
+}
+
+.main-content-column { display: flex; flex-direction: column; gap: 2rem; }
+.aside-column { display: flex; flex-direction: column; gap: 1.5rem; }
+
+/* KARTY */
+.recipe-box-paper {
+    background-color: var(--card-bg);
+    border: 0.0625rem solid var(--border-color);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.02);
+    position: relative;
+}
+
+.recipe-box-paper h2 {
+    font-family: var(--font-heading);
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.aside-column .recipe-box-paper h1 {
+    font-family: var(--font-heading);
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.method-text {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+}
+
+/* TLAČÍTKA */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-primary { background-color: var(--primary); color: #fff; }
+.btn-primary:hover { background-color: var(--primary-hover); }
+
+.card-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 0.75rem 1rem;
+    margin-top: 1rem;
+}
+
+/* TAG PILL */
+.tag-pill {
+    display: inline-block;
+    background-color: var(--border-color);
+    color: var(--primary);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.3rem 0.8rem;
+    border-radius: 1.5rem;
+    margin-bottom: 0.8rem;
+}
+
+/* HERO SEKCE S VIDEEM (Šířka 50 % + overflow visible) */
+.hero-fullscreen {
+    position: relative;
+    width: 50%;
+    margin: 2rem auto;
+    border-radius: 1rem;
+    overflow: visible;
+    min-height: 28rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 4%;
+    text-align: center;
+    background: linear-gradient(135deg, #2c2c2c 0%, #1a2217 100%);
+}
+
+.hero-fullscreen::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-video-bg {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%; min-height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    border-radius: 1rem;
+}
+
+.hero-card-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 1;
+    border-radius: 1rem;
+}
+
+/* PROSTŘEDNÍ TEXTOVÝ BOX (Šířka 40 %) */
+.hero-center-card-wide {
+    position: relative;
+    z-index: 3;
+    max-width: 40%;
+    width: 100%;
+    color: #ffffff;
+}
+
+.recipe-subtitle {
+    display: block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+    opacity: 0.85;
+}
+
+.carousel-slide { display: none; }
+.carousel-slide.active { display: block; }
+
+.hero-center-card-wide h1 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+    color: #ffffff;
+}
+
+.hero-center-card-wide .method-text { 
+    color: #e5e0d5; 
+    font-size: 0.95rem; 
+    margin-bottom: 1.2rem; 
+}
+
+.hero-cta-wrapper { margin-top: 1rem; }
+
+/* Plovoucí bubliny – každá jinde na výšku, zarovnané s okraji mřížky */
+.floating-badge {
+    position: absolute;
+    z-index: 4;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(0.3rem);
+    padding: 0.4rem 0.9rem;
+    border-radius: 2rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--primary);
+    box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    white-space: nowrap;
+}
+
+.floating-badge span {
+    color: #f59e0b;
+}
+
+/* Levá strana (asymetrická výška + správné zarovnání na vnější okraj) */
+.badge-top-left { top: 15%; left: -24%; }
+.badge-middle-left { top: 45%; left: -32%; }
+.badge-bottom-left { bottom: 12%; left: -26%; }
+
+/* Pravá strana (asymetrická výška + správné zarovnání na vnější okraj) */
+.badge-top-right { top: 20%; right: -25%; }
+.badge-middle-right { top: 60%; right: -30%; }
+.badge-bottom-right { bottom: 15%; right: -22%; }
+
+@media (max-width: 56.25rem) {
+    .hero-fullscreen { width: 100%; border-radius: 0; margin: 0; }
+    .floating-badge { display: none; }
+    .hero-center-card-wide { max-width: 90%; }
+}
+
+/* ZÁLOŽKY A KALKULAČKA */
+.categories-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 0.0625rem solid var(--border-color);
+    padding-bottom: 0.8rem;
+}
+
+.tab-btn {
+    background: transparent;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-radius: 0.4rem;
+    transition: all 0.2s;
+}
+
+.tab-btn.active, .tab-btn:hover {
+    background-color: var(--primary);
+    color: #ffffff;
+}
+
+.portions-calculator {
+    margin: 1rem 0;
+    background: var(--bg-color);
+    padding: 1rem 1.2rem;
+    border-radius: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.portions-calculator label { font-weight: 600; font-size: 0.95rem; }
+.portions-calculator input {
+    padding: 0.4rem 0.8rem; width: 4.5rem; border-radius: 0.4rem;
+    border: 0.0625rem solid var(--border-color); font-size: 1rem;
+}
+
+.ingredients-list { list-style-type: disc; padding-left: 1.5rem; line-height: 1.8; }
+
+/* VÝHODY */
+.benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+@media (max-width: 48rem) { .benefits-grid { grid-template-columns: 1fr; } }
+.benefit-card { background: var(--bg-color); padding: 1.5rem; border-radius: 0.6rem; text-align: center; }
+.benefit-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+.benefit-card h3 { font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--primary); }
+.benefit-card .method-text { font-size: 0.9rem; margin-bottom: 0; }
+
+/* SOCIÁLNÍ SÍTĚ */
+.social-icons { display: flex; gap: 0.8rem; }
+.social-icon {
+    display: flex; align-items: center; justify-content: center;
+    width: 2.5rem; height: 2.5rem; background-color: var(--bg-color);
+    color: var(--primary); border-radius: 0.6rem; font-weight: 700; font-size: 0.85rem;
+    transition: background-color 0.2s, color 0.2s;
+}
+.social-icon:hover { background-color: var(--primary); color: #fff; }
+
+/* PATIČKA A SCROLL */
+.main-footer {
+    text-align: center; padding: 2rem; border-top: 0.0625rem solid var(--border-color);
+    color: var(--text-muted); font-size: 0.9rem; margin-top: 2.5rem; background-color: var(--card-bg);
+}
+
+.scroll-top-btn {
+    position: fixed; bottom: 1.5rem; right: 1.5rem; background-color: var(--primary);
+    color: #fff; width: 2.8rem; height: 2.8rem; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-weight: bold;
+    box-shadow: 0 0.25rem 0.6rem rgba(0,0,0,0.15); z-index: 99;
+}
+
+
+/* Styly pro kategorie v galerii */
+.gallery-categories {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.cat-btn {
+    background: var(--bg-color);
+    border: 1px solid var(--border-color, #dcd6ce);
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: all 0.2s ease;
+}
+.cat-btn.active, .cat-btn:hover {
+    background: var(--primary, #3d5233);
+    color: #fff;
+    border-color: var(--primary, #3d5233);
+}
+
+/* Kontejner karuselu (skrývá přetečení) */
+.gallery-carousel-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    padding: 10px 0;
+}
+
+/* Pohyblivá dráha karuselu */
+.gallery-carousel-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Pevná šířka karet tak, aby byly vidět přesně 3 vedle sebe (100% - 2x gap / 3) */
+.gallery-card {
+    flex: 0 0 calc((100% - 40px) / 3);
+    background: var(--bg-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@media (max-width: 900px) {
+    .gallery-card {
+        flex: 0 0 calc((100% - 20px) / 2); /* Na menších obrazovkách 2 karty */
+    }
+}
+@media (max-width: 600px) {
+    .gallery-card {
+        flex: 0 0 100%; /* Na mobilech 1 karta */
+    }
+}
+
+.gallery-img-placeholder {
+    height: 200px;
+    background: #e5e0d5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+.gallery-card-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+}
+.gallery-card h3 {
+    font-size: 1.1rem;
+    margin: 0;
+}
+.gallery-btn {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+}
+
+
+/* --- SEKCE ČLÁNKŮ --- */
+.articles-grid {
+    display: grid;
+    gap: 30px;
+}
+
+.article-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #e8e2d5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.article-date {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.article-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary);
+    margin: 10px 0 12px 0;
+    font-size: 1.5rem;
+}
+
+.article-text {
+    color: var(--text-light);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Tlačítka uvnitř karet */
+.article-card .calc-btn {
+    display: inline-block;
+    text-decoration: none;
+    background: var(--primary, #3b4d38);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 500;
+    text-align: center;
+    transition: background 0.2s;
+}
+
+.article-card .calc-btn:hover {
+    opacity: 0.9;
+}
+
+/* Alternativní obrysové tlačítko (pro druhý článek) */
+.article-card .btn-outline {
+    background: transparent;
+    color: var(--primary, #3b4d38);
+    border: 1px solid var(--primary, #3b4d38);
+}

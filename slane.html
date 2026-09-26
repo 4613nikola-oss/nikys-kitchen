@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slané recepty | Niky's Kitchen</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="main-navigation">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Niky's Kitchen</a>
+            <ul class="nav-list">
+                <li><a href="index.html">Domů</a></li>
+                <li class="dropdown">
+                    <a href="slane.html" class="active">Recepty ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="slane.html">Slané</a></li>
+                        <li><a href="sladke.html">Sladké</a></li>
+                        <li><a href="napoje.html">Nápoje</a></li>
+                    </ul>
+                </li>
+                <li><a href="clanky.html">Články</a></li>
+                <li><a href="o-mne.html">O mně</a></li>
+                <li class="dropdown">
+                    <a href="#">Aplikace ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="clanky/kalkulacka.html">Kalkulačka</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="site-wrapper">
+        <div class="page-header">
+            <h1 class="section-title">Slané recepty</h1>
+            <p class="section-subtitle">Poctivé domácí jídlo, zdravé obědy a syté pečení plné chuti.</p>
+        </div>
+
+        <main style="display: flex; flex-direction: column; gap: 40px;">
+            <article class="recipe-card">
+                <img src="images/hotovy_kolac_uvidni.png" alt="Koláč od Niky" class="recipe-image">
+                <div class="recipe-content">
+                    <span class="recipe-tag">Hlavní chod & Pečení</span>
+                    <h2>Koláč od Niky</h2>
+                    <p>Slaný koláč s kuřecím mletým masem, strouhanou cuketou, mozzarellou a piniovými oříšky.</p>
+                    <div>
+                        <a href="clanky/kolac-od-niky.html" class="back-link" style="margin-top: 0;">Zobrazit detailní recept →</a>
+                    </div>
+                </div>
+            </article>
+
+            <div class="cards-grid-3">
+                <div class="card-box">
+                    <h3>Rychlé večeře</h3>
+                    <p>Lehké a syté pokrmy hotové za chvíli po náročném dni.</p>
+                </div>
+                <div class="card-box">
+                    <h3>Zeleninové pečení</h3>
+                    <p>Využití sezónní zeleniny v hlavních chodech i slaných koláčích.</p>
+                </div>
+                <div class="card-box">
+                    <h3>Maso a drůbež</h3>
+                    <p>Recepty zaměřené na kvalitní kuřecí a krůtí maso.</p>
+                </div>
+            </div>
+        </main>
+
+        <a href="index.html" class="back-link">← Zpět na hlavní stránku</a>
+    </div>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 Niky's Kitchen. Všechna práva vyhrazena.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

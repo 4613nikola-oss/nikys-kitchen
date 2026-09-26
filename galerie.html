@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie | Koláč od Niky</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- HLAVNÍ NAVIGACE -->
+    <header class="main-navigation">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Koláč od Niky</a>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="index.html">Domů</a></li>
+                    <li><a href="slane.html">Recepty</a></li>
+                    <li><a href="aplikace.html">Aplikace</a></li>
+                    <li><a href="clanky.html">Články</a></li>
+                    <li><a href="o-mne.html">O mně</a></li>
+                    <li><a href="galerie.html" class="active">Galerie</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- OBSAH STRÁNKY -->
+    <div class="site-wrapper">
+        <main>
+            <div class="page-header">
+                <h1 class="section-title">Fotogalerie</h1>
+                <p class="section-subtitle">Prohlédněte si mé upečené dobroty podle kategorií.</p>
+            </div>
+
+            <section class="recipe-box-paper">
+                <!-- Tlačítka kategorií -->
+                <div class="gallery-categories">
+                    <button class="cat-btn active" data-category="vse">Vše</button>
+                    <button class="cat-btn" data-category="slane">Slané</button>
+                    <button class="cat-btn" data-category="sladke">Sladké</button>
+                    <button class="cat-btn" data-category="napoje">Nápoje</button>
+                </div>
+
+                <!-- Automatický karusel (kontejner s posuvem doleva) -->
+                <div class="gallery-carousel-container">
+                    <div class="gallery-carousel-track">
+                        
+                        <!-- Karta 1: Slané -->
+                        <div class="gallery-card" data-category="slane">
+                            <div class="gallery-img-placeholder">[ Foto: Cuketový koláč ]</div>
+                            <div class="gallery-card-content">
+                                <h3>Cuketovo-bramborový koláč</h3>
+                                <a href="slane.html" class="btn btn-primary gallery-btn">Recept</a>
+                            </div>
+                        </div>
+
+                        <!-- Karta 2: Slané -->
+                        <div class="gallery-card" data-category="slane">
+                            <div class="gallery-img-placeholder">[ Foto: Křupavý chléb ]</div>
+                            <div class="gallery-card-content">
+                                <h3>Domácí kváskový chléb</h3>
+                                <a href="slane.html" class="btn btn-primary gallery-btn">Recept</a>
+                            </div>
+                        </div>
+
+                        <!-- Karta 3: Sladké -->
+                        <div class="gallery-card" data-category="sladke">
+                            <div class="gallery-img-placeholder">[ Foto: Kynuté buchty ]</div>
+                            <div class="gallery-card-content">
+                                <h3>Nadýchané kynuté buchty</h3>
+                                <a href="slane.html" class="btn btn-primary gallery-btn">Recept</a>
+                            </div>
+                        </div>
+
+                        <!-- Karta 4: Nápoje -->
+                        <div class="gallery-card" data-category="napoje">
+                            <div class="gallery-img-placeholder">[ Foto: Domácí limonáda ]</div>
+                            <div class="gallery-card-content">
+                                <h3>Bylinková limonáda</h3>
+                                <a href="slane.html" class="btn btn-primary gallery-btn">Recept</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <div style="margin-top: 30px;">
+                <a href="index.html" class="back-link">← Zpět na hlavní stránku</a>
+            </div>
+        </main>
+    </div>
+
+    <!-- PATIČKA -->
+    <footer class="main-footer">
+        <p>&copy; 2026 Koláč od Niky. Všechna práva vyhrazena.</p>
+    </footer>
+
+    <!-- Tlačítko zpět nahoru -->
+    <a href="#" class="scroll-top-btn" title="Nahoru">↑</a>
+
+    <!-- Hlavní JS skript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

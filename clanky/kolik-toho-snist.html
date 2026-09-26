@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niky's Kitchen | Kolik toho vlastně sníst?</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- Horní navigace -->
+    <nav class="main-navigation">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Niky's Kitchen</a>
+            <ul class="nav-list">
+                <li><a href="../index.html">Domů</a></li>
+                <li><a href="../slane.html">Slané</a></li>
+                <li><a href="../sladke.html">Sladké</a></li>
+                <li><a href="../clanky.html" class="active">Články</a></li>
+                <li><a href="../galerie.html">Galerie</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hlavní obsah článku -->
+    <div class="site-wrapper">
+        <main class="blog-post" style="max-width: 800px; margin: 0 auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06);">
+            <h1>Kolik toho vlastně sníst?</h1>
+            <p class="subheading" style="color: #666; font-style: italic; margin-bottom: 30px;">Strava pro fitkaře i náročnou práci</p>
+            
+            <!-- KROK 1: Úvodní vtažení do děje -->
+            <section class="article-content" style="display: flex; flex-direction: column; gap: 20px; line-height: 1.6;">
+                <p>
+                    Správné nastavení stravy je naprostým základem úspěchu. Když celý den stojíte na nohou v náročné práci, naběháte kilometry mezi regály v maloobchodě a po směně zamíříte rovnou do bazénu odplavat svých tradičních 1200 metrů nebo zvedat váhy do gymu, vaše tělo funguje jako vysoce výkonný motor. Potřebuje prvotřídní palivo. Hubnutí, rýsování ani nabírání svalové hmoty není o drastickém hladovění, ale o pochopení vlastní energetické bilance a potřeb těla.
+                </p>
+                <p>
+                    Většina online doporučení počítá s průměrným člověkem se sedavým zaměstnáním. Pokud však kombinujete aktivní životní styl s profesí, kde se nezastavíte, váš energetický výdej dramaticky stoupá. Pojďme si hned spočítat, jak na tom jste.
+                </p>
+            </section>
+
+            <!-- KROK 2: Interaktivní fitness kalkulačka -->
+            <h2 style="margin-top: 40px; color: var(--primary);">1. Spočítejte si svůj doporučený příjem</h2>
+            <section class="calculator-box" style="background: var(--bg, #f9f9f9); padding: 25px; border-radius: 8px; margin-top: 15px;">
+                <form class="calc-grid" style="display: flex; flex-direction: column; gap: 15px;">
+                    <label for="gender">Pohlaví:
+                        <select id="gender" style="width: 100%; padding: 8px; margin-top: 5px; border-radius: 6px; border: 1px solid #ccc;">
+                            <option value="female">Žena</option>
+                            <option value="male">Muž</option>
+                        </select>
+                    </label>
+                    
+                    <label for="weight">Váha (kg):
+                        <input type="number" id="weight" placeholder="např. 60" style="width: 100%; padding: 8px; margin-top: 5px; border-radius: 6px; border: 1px solid #ccc;">
+                    </label>
+                    
+                    <label for="height">Výška (cm):
+                        <input type="number" id="height" placeholder="např. 170" style="width: 100%; padding: 8px; margin-top: 5px; border-radius: 6px; border: 1px solid #ccc;">
+                    </label>
+                    
+                    <label for="age">Věk (roky):
+                        <input type="number" id="age" placeholder="např. 25" style="width: 100%; padding: 8px; margin-top: 5px; border-radius: 6px; border: 1px solid #ccc;">
+                    </label>
+
+                    <label for="activity">Úroveň denní aktivity:
+                        <select id="activity" style="width: 100%; padding: 8px; margin-top: 5px; border-radius: 6px; border: 1px solid #ccc;">
+                            <option value="light">Lehká aktivita (sedavé zaměstnání + lehký trénink 1-3x týdně)</option>
+                            <option value="moderate">Střední aktivita (práce na nohou / v pohybu NEBO sedavé zaměstnání + tvrdý trénink 4-5x týdně)</option>
+                            <option value="high">Vysoká aktivita (náročná práce v kuse na nohou + pravidelný sport/plavání/gym)</option>
+                        </select>
+                    </label>
+                </form>
+                
+                <button type="button" class="calc-btn" onclick="calculateFitness()" style="background: var(--primary, #d4a373); color: white; border: none; padding: 12px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 20px; width: 100%;">Spočítat příjem</button>
+                
+                <!-- DYNAMICKÝ VÝSLEDNÝ BOX -->
+                <div id="calcResults" class="calc-results" style="display:none; margin-top: 25px; background: white; padding: 20px; border-radius: 8px; border: 1px solid #e0e0e0;">
+                    <h4>Vaše osobní výsledky:</h4>
+                    <ul style="margin: 10px 0 20px 20px;">
+                        <li><strong>Vaše BMR (Bazální metabolismus):</strong> <span id="resBMR">0 kcal</span></li>
+                        <li><strong>Vaše TDEE (Celkový denní výdej):</strong> <span id="resMaintain">0 kcal</span></li>
+                    </ul>
+                    
+                    <div class="goals-split" style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <div class="goal-card deficit" style="flex: 1; min-width: 250px; background: #fdf0ed; padding: 15px; border-radius: 6px;">
+                            <h6>Chci zdravě hubnout / rýsovat</h6>
+                            <p style="font-size: 0.9rem; margin: 5px 0;">Cílový příjem po odečtení deficitu:</p>
+                            <strong id="goalDeficit" style="font-size: 1.2rem; color: #c0392b;">0 kcal</strong>
+                            <p class="next-step-text" style="font-size: 0.85rem; margin-top: 8px;">👉 <strong>Doporučení:</strong> Zaměřte se na jídla s vysokým obsahem bílkovin a nižší energetickou hustotou (např. náš cuketovo-bramborový koláč).</p>
+                        </div>
+                        <div class="goal-card surplus" style="flex: 1; min-width: 250px; background: #eafaf1; padding: 15px; border-radius: 6px;">
+                            <h6>Chci budovat svaly / regenerovat</h6>
+                            <p style="font-size: 0.9rem; margin: 5px 0;">Cílový příjem pro růst a obnovu:</p>
+                            <strong id="goalSurplus" style="font-size: 1.2rem; color: #27ae60;">0 kcal</strong>
+                            <p class="next-step-text" style="font-size: 0.85rem; margin-top: 8px;">👉 <strong>Doporučení:</strong> Navýšte zdravé tuky a komplexní sacharidy. Nezapomínejte na vydatné jídlo ihned po sportu.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- KROK 3: PEVNÝ TEXT ČLÁNKU -->
+            <h2 style="margin-top: 40px; color: var(--primary);">2. Průvodce: Co zjištěná čísla znamenají a jak s nimi pracovat?</h2>
+            <section class="article-content" style="display: flex; flex-direction: column; gap: 20px; line-height: 1.6; margin-top: 15px;">
+                <p>
+                    Ať už vám kalkulačka vyplivla jakákoliv čísla, pro správné sestavení jídelníčku musíte rozumět tomu, co se pod těmito zkratkami vlastně skrývá a jak je promítnout do reálného dne:
+                </p>
+                
+                <p>
+                    <strong>BMR (Bazální metabolismus):</strong> Představuje množství energie, které vaše tělo spotřebuje v naprostém klidu pouze na udržení základních životních funkcí (dýchání, srdeční činnost, činnost mozku a orgánů). Tuto hodnotu berte jako <strong>nepřekročitelnou červenou linii</strong>. Nikdy, ani při sebedrastičtější dietě, nesmíte jíst méně, než je vaše BMR. Jinak si poškodíte metabolismus a ztratíte svaly.
+                </p>
+                <p>
+                    <strong>TDEE (Celkový denní výdej):</strong> Toto číslo v sobě kombinuje vaše BMR a veškerý reálný pohyb. Pokud celý den nachodíte kilometry v práci a večer si jdete zaplavat nebo zacvičit, vaše TDEE vyskočí vysoko. Je to váš <strong>udržovací příjem</strong> – když budete jíst přesně tolik, vaše váha se nepohne ani o gram.
+                </p>
+
+                <h3 style="margin-top: 20px; color: #333;">🔍 Jak číst konkrétní hodnoty a reagować na ně?</h3>
+                <div class="scenarios-box" style="display: flex; flex-direction: column; gap: 15px;">
+                    <div class="scenario-item" style="background: #fdf8f2; padding: 15px; border-left: 4px solid var(--primary, #d4a373); border-radius: 4px;">
+                        <strong>Scénář A: Pokud vám celkový výdej (TDEE) vyšel vyšší než 2200–2500 kcal:</strong>
+                        <p style="margin-top: 5px;">To je jasný důkaz toho, že kombinace náročné práce na nohou a sportovních aktivit dělá z vašeho těla obří spalovací motor. <strong>Jak s tím pracovat:</strong> Nebojte se jídla! Pokud byste při takovém výdeji jedli málo (např. kolem 1500 kcal), tělo začne hladovět, budete permanentně unavení, bez nálady a regenerace svalů se úplně zastaví. Základem vašeho dne musí být dostatek komplexních sacharidů (rýže, brambory, vločky), které dodají stabilní palivo.</p>
+                    </div>
+
+                    <div class="scenario-item" style="background: #fdf8f2; padding: 15px; border-left: 4px solid var(--primary, #d4a373); border-radius: 4px;">
+                        <strong>Scénář B: Pokud vám bazální metabolismus (BMR) vyšel kolem 1300–1500 kcal:</strong>
+                        <p style="margin-top: 5px;">Tato hodnota je pro dospělou ženu naprosto přirozená a zdravá. <strong>Jak s tím pracovat:</strong> Pokud je vaším cílem hubnutí, optimální denní příjem si nastavte přesně <strong>uprostřed mezi hodnotou BMR a TDEE</strong>. Vytvoříte tím bezpečný a udržitelný deficit (cca 300–500 kcal pod TDEE), při kterém budete pálit čistý tuk, ale nebudete tělo trápit hluboko pod jeho bazální hranicí.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- KROK 4: Odborné matematické pozadí -->
+            <h2 style="margin-top: 40px; color: var(--primary);">3. Jak kalkulačka došla k výsledkům?</h2>
+            <section class="article-content" style="display: flex; flex-direction: column; gap: 15px; line-height: 1.6; margin-top: 15px;">
+                <p>
+                    Pro přesný výpočet energie v pozadí naší kalkulačky využíváme celosvětově uznávaný a ověřený <strong>Mifflin-St Jeorův vzorec</strong>, který je v moderní dietetice považován za nejpřesnější:
+                </p>
+                
+                <div class="formula-box" style="background: #f5f5f5; padding: 20px; border-radius: 8px; text-align: center;">
+                    <div class="math-render" style="font-size: 1.1rem; font-weight: bold; margin-bottom: 10px;">
+                        $$BMR = (10 \times \text{váha v kg}) + (6.25 \times \text{výška v cm}) - (5 \times \text{věk v letech}) - 161$$
+                    </div>
+                    <p class="formula-note" style="font-size: 0.85rem; color: #666;">
+                        *Tento matematický vzorec je zkonstruován přímo pro ženský organismus. Výsledné BMR se následně vynásobí koeficientem vaší denní aktivity (PAL), čímž získáme konečné TDEE.*
+                    </p>
+                </div>
+            </section>
+
+            <!-- KROK 5: Praktické tipy pro běžný den -->
+            <h2 style="margin-top: 40px; color: var(--primary);">4. Ověřené tipy pro efektivní fitness stravování</h2>
+            <section class="article-content" style="margin-top: 15px;">
+                <div class="tips-box" style="background: #f0f7f4; padding: 20px; border-radius: 8px;">
+                    <ul style="display: flex; flex-direction: column; gap: 10px; margin-left: 20px; line-height: 1.5;">
+                        <li><strong>Sacharidy jsou kamarád, ne nepřítel:</strong> Po náročné pracovní směně nebo těžkém tréninku v bazénu jsou zásoby svalového glykogenu vyčerpané. Komplexní sacharidy jsou klíčem k obnově energie a zamezení únavy.</li>
+                        <li><strong>Bílkoviny pro ochranu svalů:</strong> Každé jídlo by mělo obsahovat kvalitní zdroj bílkovin (kuřecí maso, vejce, mozzarella, ryby). Pomáhají sytosti a opravují svalová vlákna poškozená tréninkem.</li>
+                        <li><strong>Nepodceňujte hydrataci:</strong> Dehydratace snižuje sportovní výkon až o 20 % a často se maskuje jako hlad nebo chuť na vysoce kalorická jídla.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- KROK 6: Praktická inspirace -->
+            <h2 style="margin-top: 40px; color: var(--primary);">5. Praktická inspirace z Niky's Kitchen</h2>
+            <section class="recipes-grid" style="display: flex; gap: 20px; margin-top: 15px; flex-wrap: wrap;">
+                <article class="recipe-card" style="flex: 1; min-width: 220px; border: 1px solid #eee; border-radius: 8px; padding: 15px; text-align: center;">
+                    <a href="kolac-od-niky.html"><img src="../images/hotovy_kolac_uvidni.png" alt="Koláč" style="width: 100%; height: 140px; object-fit: cover; border-radius: 6px;"></a>
+                    <h3 style="font-size: 1.1rem; margin: 10px 0;">Koláč od Niky</h3>
+                    <a href="kolac-od-niky.html" class="btn btn-success" style="display: inline-block; padding: 6px 12px; background: var(--primary, #d4a373); color: white; border-radius: 4px; text-decoration: none; font-size: 0.9rem;">Zobrazit recept</a>
+                </article>
+            </section>
+        </main>
+
+        <footer style="text-align: center; padding: 30px 0; color: #666; font-size: 0.9rem;">
+            <p>&copy; 2026 Niky's Kitchen.</p>
+        </footer>
+    </div>
+
+    <!-- JavaScript výpočty -->
+    <script>
+        function calculateFitness() {
+            const weight = parseFloat(document.getElementById('weight').value);
+            const height = parseFloat(document.getElementById('height').value);
+            const age = parseFloat(document.getElementById('age').value);
+            const gender = document.getElementById('gender').value;
+            const activity = document.getElementById('activity').value;
+
+            if (weight && height && age) {
+                let bmr = 0;
+                if (gender === 'female') {
+                    bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+                } else {
+                    bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+                }
+                
+                let activityMultiplier = 1.375; 
+                if (activity === 'moderate') {
+                    activityMultiplier = 1.55;
+                } else if (activity === 'high') {
+                    activityMultiplier = 1.725;
+                }
+
+                let maintain = bmr * activityMultiplier; 
+                let deficit = maintain - 400; 
+                let surplus = maintain + 250; 
+
+                document.getElementById('resBMR').innerText = Math.round(bmr) + " kcal";
+                document.getElementById('resMaintain').innerText = Math.round(maintain) + " kcal";
+                document.getElementById('goalDeficit').innerText = Math.round(deficit) + " kcal";
+                document.getElementById('goalSurplus').innerText = Math.round(surplus) + " kcal";
+                
+                document.getElementById('calcResults').style.display = 'block';
+            } else {
+                alert('Prosím, vyplňte všechny hodnoty před výpočtem.');
+            }
+        }
+    </script>
+</body>
+</html>

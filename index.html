@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koláč od Niky</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+   <!-- HLAVNÍ NAVIGACE -->
+    <header class="main-navigation">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Koláč od Niky</a>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="index.html" class="active">Domů</a></li>
+                    <li><a href="slane.html">Recepty</a></li>
+                    <li><a href="aplikace.html">Aplikace</a></li>
+                    <li><a href="clanky.html">Články</a></li>
+                    <li><a href="o-mne.html">O mně</a></li>
+                    <li><a href="galerie.html">Galerie</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- OBSAH STRÁNKY -->
+    <div class="site-wrapper">
+        <main>
+            <!-- HERO SEKCE S VIDEEM, KARUSELEM A 3 BUBLINAMI NA KAŽDÉ STRANĚ -->
+            <section class="hero-fullscreen">
+                <!-- Video pozadí -->
+                <video autoplay muted loop playsinline class="hero-video-bg">
+                    <source src="video/kulinarium.mp4" type="video/mp4">
+                </video>
+                <div class="hero-card-overlay"></div>
+
+                <!-- 3 bubliny vlevo -->
+                <div class="floating-badge badge-top-left"><span>★ 5.0</span> Top recept</div>
+                <div class="floating-badge badge-middle-left">Skvělá chuť! <span>★★★★★</span></div>
+                <div class="floating-badge badge-bottom-left"><span>★</span> Mám uloženo</div>
+
+                <!-- Středový text s karuselem -->
+                <div class="hero-center-card-wide">
+                    <span class="recipe-subtitle">Domácí kulinárium</span>
+                    <div class="carousel-slide active">
+                        <h1>Slané a sladké pečení</h1>
+                        <p class="method-text">Objevte recepty plné chuti, které zvládne upéct každý s láskou a lehkostí.</p>
+                    </div>
+                    <div class="carousel-slide">
+                        <h1>Chytrý koncept</h1>
+                        <p class="method-text">Uvař jednou, obměňuj dny a užívej si rozmanitost bez starostí.</p>
+                    </div>
+                    <div class="hero-cta-wrapper">
+                        <a href="#obsah-webu" class="btn btn-primary">Prozkoumat web →</a>
+                    </div>
+                </div>
+
+                <!-- 3 bubliny vpravo -->
+                <div class="floating-badge badge-top-right"><span>★★★★★</span> Výborný koláč</div>
+                <div class="floating-badge badge-middle-right">Rychlé a fit <span>★ 4.9</span></div>
+                <div class="floating-badge badge-bottom-right"><span>★</span> Zkouším dnes</div>
+            </section>
+
+            <!-- HLAVNÍ MŘÍŽKA STRÁNKY (MAIN + ASIDE) -->
+            <div class="main-layout-with-aside" id="obsah-webu">
+                
+                <!-- LEVÝ SLOUPEC (MAIN) -->
+                <div class="main-content-column">
+                    
+                    <!-- Záložky: Nejnovější, Nejoblíbenější, Články -->
+                    <section class="recipe-box-paper">
+                        <div class="categories-tabs">
+                            <button class="tab-btn active" data-target="nejnovejsi">Nejnovější</button>
+                            <button class="tab-btn" data-target="nejoblibenejsi">Nejoblíbenější</button>
+                            <button class="tab-btn" data-target="clanky-tab">Články</button>
+                        </div>
+
+                        <div id="nejnovejsi" class="tab-content active">
+                            <h2>Cuketovo-bramborový koláč od Niky</h2>
+                            <p class="method-text">Vynikající, vláčný a sytý koláč plný skvělých surovin. Vyzkoušejte domácí pečení, které provoní celou kuchyni.</p>
+                            
+                            <!-- Kalkulačka porcí -->
+                            <div class="portions-calculator">
+                                <label for="portions-input">Počet porcí:</label>
+                                <input type="number" id="portions-input" value="4" data-base-portions="4" min="1" max="20">
+                            </div>
+
+                            <h3>Suroviny:</h3>
+                            <ul class="ingredients-list">
+                                <li><strong class="ingredient-amount">200</strong> g strouhané cukety</li>
+                                <li><strong class="ingredient-amount">300</strong> g brambor</li>
+                                <li><strong class="ingredient-amount">150</strong> g mletého kuřecího masa</li>
+                                <li><strong class="ingredient-amount">100</strong> g sýra mozzarella</li>
+                                <li><strong class="ingredient-amount">30</strong> g piniových oříšků</li>
+                            </ul>
+                        </div>
+
+                        <div id="nejoblibenejsi" class="tab-content" style="display: none;">
+                            <h2>Nadýchané kynuté buchty</h2>
+                            <p class="method-text">Tradiční recept na poctivé babiččiny buchty plněné domácí povidlovou náplní. Vždy měkké a voňavé.</p>
+                        </div>
+
+                        <div id="clanky-tab" class="tab-content" style="display: none;">
+                            <h2>Nejnovější články z kulinária</h2>
+                            <p class="method-text">Přečtěte si zajímavé tipy o pečení, výběru surovin a tricích pro vylepšení vašich receptů.</p>
+                        </div>
+                    </section>
+
+                    <!-- Benefity -->
+                    <section class="recipe-box-paper">
+                        <h2 style="text-align: center; margin-bottom: 20px;">Proč péct a vařit s námi?</h2>
+                        <div class="benefits-grid">
+                            <div class="benefit-card">
+                                <div class="benefit-icon">🌿</div>
+                                <h3>100% Přírodní suroviny</h3>
+                                <p class="method-text">Využíváme sezónní čerstvé potraviny.</p>
+                            </div>
+                            <div class="benefit-card">
+                                <div class="benefit-icon">⏱️</div>
+                                <h3>Ušetřete čas</h3>
+                                <p class="method-text">Chytrý koncept vaření pro každý den.</p>
+                            </div>
+                            <div class="benefit-card">
+                                <div class="benefit-icon">❤️</div>
+                                <h3>Ověřená chuť</h3>
+                                <p class="method-text">Pečlivě otestované rodinné recepty.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Výzva ke stažení aplikace -->
+                    <section class="recipe-box-paper" style="text-align: center; background: linear-gradient(135deg, #3d5233 0%, #2e3e26 100%); color: #fff;">
+                        <h2 style="color: #fff; margin-bottom: 8px;">Mějte recepty stále u sebe</h2>
+                        <p class="method-text" style="color: #e5e0d5; margin-bottom: 16px;">Stáhněte si naši aplikaci a získejte přístup ke všem receptům a plánům offline.</p>
+                        <a href="kalkulacka.html" class="btn" style="background: #fff; color: var(--primary);">Stáhnout aplikaci</a>
+                    </section>
+
+                    <!-- Galerie -->
+                    <section class="recipe-box-paper">
+                        <h2>Galerie našich pečených dobrot</h2>
+                        <p class="method-text">Prohlédněte si fotky od vás, našich pekařů.</p>
+                        <div class="gallery-carousel-preview" style="background: var(--bg-color); height: 160px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-weight: 600;">
+                            [ Interaktivní karusel galerie ]
+                        </div>
+                        <a href="galerie.html" class="btn btn-primary card-btn" style="margin-top: 14px;">Přejít do celé galerie →</a>
+                    </section>
+
+                </div>
+
+                <!-- PRAVÝ SLOUPEC (ASIDE) -->
+                <aside class="aside-column">
+                    
+                    <!-- Zajímavost -->
+                    <div class="recipe-box-paper">
+                        <h1>Cuketa jako tajná zbraň</h1>
+                        <span class="tag-pill">Zajímavost</span>
+                        <p class="method-text">Díky vysokému obsahu vody a neutrální chuti dokáže cuketa v koláčích dokonale nahradit část tuku.</p>
+                        <a href="clanky.html" class="btn btn-primary card-btn">Další článek →</a>
+                    </div>
+
+                    <!-- Mobilní aplikace -->
+                    <div class="recipe-box-paper">
+                        <h2>Mobilní aplikace</h2>
+                        <p class="method-text">Všechny recepty a nákupní seznamy pohodlně v kapse.</p>
+                        <a href="kalkulacka.html" class="btn btn-primary card-btn">Více</a>
+                    </div>
+
+                    <!-- 7denní plán -->
+                    <div class="recipe-box-paper">
+                        <h2>7denní plán</h2>
+                        <p class="method-text">Harmonogram pečení a vaření na celý týden bez přemýšlení.</p>
+                        <a href="slane.html" class="btn btn-primary card-btn">Zobrazit plán →</a>
+                    </div>
+
+                    <!-- Sociální sítě -->
+                    <div class="recipe-box-paper">
+                        <h2>Sledujte mě</h2>
+                        <p class="method-text" style="margin-bottom: 12px;">Buďte v kontaktu na sociálních sítích:</p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon" title="Instagram">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            </a>
+                            <a href="#" class="social-icon" title="Facebook">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                            </a>
+                            <a href="#" class="social-icon" title="Pinterest">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12a4 4 0 1 1 8 0 4 4 0 0 1-8 0z"></path><line x1="12" y1="16" x2="12" y2="22"></line><line x1="12" y1="8" x2="12" y2="2"></line></svg>
+                            </a>
+                        </div>
+                    </div>
+                </aside>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- PATIČKA -->
+    <footer class="main-footer">
+        <p>&copy; 2026 Koláč od Niky. Všechna práva vyhrazena.</p>
+    </footer>
+
+    <!-- Tlačítko zpět nahoru -->
+    <a href="#" class="scroll-top-btn" title="Nahoru">↑</a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

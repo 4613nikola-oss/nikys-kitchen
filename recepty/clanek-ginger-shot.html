@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="utf-8">
+    <title>Domácí ginger shot pro imunitu | Niky's Kitchen</title>
+    <style>
+        :root { --primary: #4a6b41; --primary-dark: #3b5238; --bg: #faf8f5; --text: #2c2c2c; --text-light: #666666; --card-bg: #ffffff; --radius: 12px; --shadow: 0 4px 20px rgba(0, 0, 0, 0.06); }
+        body { margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.8; }
+        *, *::before, *::after { box-sizing: border-box; }
+        .main-navigation { background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.03); position: sticky; top: 0; z-index: 1000; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; height: 70px; }
+        .logo { font-family: "Mamzelle", serif; font-size: 1.5rem; font-weight: bold; color: var(--primary); text-decoration: none; }
+        .nav-list { list-style: none; margin: 0; padding: 0; display: flex; gap: 30px; align-items: center; }
+        .nav-list a { text-decoration: none; color: var(--text); font-weight: 500; font-size: 0.95rem; transition: color 0.2s; }
+        .nav-list a:hover { color: var(--primary); }
+        .article-wrapper { max-width: 800px; margin: 50px auto; padding: 0 20px; background: white; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+        .article-hero-image { width: 100%; height: 400px; object-fit: cover; background-color: #e5ede2; }
+        .article-body { padding: 50px; }
+        .article-tag { display: inline-block; background-color: #f3efe6; color: var(--primary); font-size: 0.85rem; font-weight: 600; padding: 6px 14px; border-radius: 20px; margin-bottom: 20px; }
+        h1 { color: var(--primary); font-size: 2.2rem; margin: 0 0 20px 0; line-height: 1.3; }
+        h2 { color: var(--primary); font-size: 1.5rem; margin-top: 40px; }
+        p { color: var(--text-light); font-size: 1.05rem; margin-bottom: 20px; }
+        ul { color: var(--text-light); font-size: 1.05rem; margin-bottom: 20px; padding-left: 20px; }
+        li { margin-bottom: 10px; }
+        .back-link { display: inline-block; margin-top: 30px; color: var(--primary); text-decoration: none; font-weight: 600; }
+        .back-link:hover { text-decoration: underline; }
+        .main-footer { text-align: center; padding: 30px; color: var(--text-light); border-top: 1px solid #eee; background: white; margin-top: 60px; }
+        @media (max-width: 768px) { .article-body { padding: 25px; } h1 { font-size: 1.8rem; } }
+    </style>
+</head>
+<body>
+    <nav class="main-navigation">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Niky's Kitchen</a>
+            <ul class="nav-list">
+                <li><a href="index.html">Domů</a></li>
+                <li><a href="slane.html">Recepty</a></li>
+                <li><a href="clanky.html">Články</a></li>
+                <li><a href="galerie.html">Galerie</a></li>
+                <li><a href="o-mne.html">O mně</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="article-wrapper">
+        <img src="images/hotovy_kolac_uvidni.png" alt="Ginger shot" class="article-hero-image">
+        <div class="article-body">
+            <span class="article-tag">Imunita a zdraví</span>
+            <h1>Proč si ráno dát domácí ginger shot a jak si ho vyrobit</h1>
+            
+            <p>Malá sklenička, která v tobě probudí i mrtvého. Zázvorové shoty se staly obrovským hitem, ale kupovat si je v kavárnách nebo obchodech leze do peněz a často jsou plné zbytečného cukru. Vyrobit si vlastní, poctivý ginger shot doma přitom zabere jen pár minut.</p>
+
+            <h2>Síla kořene v jedné hltochové skleničce</h2>
+            <p>Zázvor obsahuje gingerol – látku s mocnými antioxidačními a protizánětlivými účinky. Když k němu přidáš čerstvou citronovou šťávu a kapku medu, získáš ranní vzpruhu, která nastartuje metabolismus a skvěle prohřeje tělo před odchodem do práce nebo po ranním běhu.</p>
+
+            <ul>
+                <li><strong>Nakopnutí imunity:</strong> Ideální prevence proti sychravému počasí i po náročném týdnu v práci nebo sauně.</li>
+                <li><strong>Podpora trávení:</strong> Skvěle stimuluje tvorbu trávicích šťáv hned po ránu.</li>
+                <li><strong>Přírodní energie:</strong> Žádný umělý kofein, jen čistá síla kořene a citrusů.</li>
+            </ul>
+
+            <a href="napoje.html#gingershot" class="back-link">← Přejít rovnou na recept na Ginger Shot</a>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 Niky's Kitchen. Všechna práva vyhrazena.</p>
+    </footer>
+</body>
+</html>

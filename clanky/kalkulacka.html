@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulačka a Aplikace | Koláč od Niky</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- NAVIGACE -->
+    <header class="main-navigation">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Koláč od Niky</a>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="index.html">Domů</a></li>
+                    
+                    <li class="dropdown">
+                        <a href="#">Recepty ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="slane.html">Slané</a></li>
+                            <li><a href="sladke.html">Sladké</a></li>
+                            <li><a href="napoje.html">Nápoje</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="clanky.html">Články</a></li>
+                    <li><a href="o-mne.html">O mně</a></li>
+                    <li><a href="kalkulacka.html" class="active">Kalkulačka</a></li>
+                    <li><a href="galerie.html">Galerie</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="site-wrapper">
+        <main>
+            <header style="margin-bottom: 30px;">
+                <h1 class="section-title" style="margin-bottom: 12px;">Kalkulačka kalorického příjmu</h1>
+                <p style="color: var(--text-light); font-size: 1.15rem; max-width: 640px;">
+                    Spočítej si svůj orientační denní příjem energie. Hodnoty jsou pouze orientační a nenahrazují odbornou radu.
+                </p>
+            </header>
+
+            <div class="calculator-box">
+                <form class="calc-grid" id="calcForm">
+                    <div>
+                        <label for="gender">Pohlaví</label>
+                        <select id="gender">
+                            <option value="female">Žena</option>
+                            <option value="male">Muž</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="weight">Váha (kg)</label>
+                        <input type="number" id="weight" placeholder="např. 65" min="30" max="250">
+                    </div>
+
+                    <div>
+                        <label for="height">Výška (cm)</label>
+                        <input type="number" id="height" placeholder="např. 170" min="100" max="250">
+                    </div>
+
+                    <div>
+                        <label for="age">Věk</label>
+                        <input type="number" id="age" placeholder="např. 31" min="15" max="100">
+                    </div>
+
+                    <div style="grid-column: 1 / -1;">
+                        <label for="activity">Úroveň aktivity</label>
+                        <select id="activity">
+                            <option value="light">Lehká aktivita (sedavé zaměstnání + lehký pohyb 1–3× týdně)</option>
+                            <option value="moderate">Střední aktivita (práce na nohou nebo tvrdší trénink 4–5× týdně)</option>
+                            <option value="high">Vysoká aktivita (náročná práce na nohou + pravidelný sport)</option>
+                        </select>
+                    </div>
+                </form>
+
+                <button type="button" class="calc-btn" onclick="calculateFitness()">Spočítat příjem</button>
+
+                <!-- Výsledky -->
+                <div id="calcResults" class="calc-results" style="display: none;">
+                    <h2 style="font-family: 'Playfair Display', serif; color: var(--primary); margin-bottom: 16px;">Vaše výsledky</h2>
+                    
+                    <p><strong>BMR (bazální metabolismus):</strong> <span id="resBMR">0</span> kcal</p>
+                    <p><strong>TDEE (celkový denní výdej):</strong> <span id="resMaintain">0</span> kcal</p>
+
+                    <div class="goals-split">
+                        <div class="goal-card deficit">
+                            <h6>Chci zdravě hubnout</h6>
+                            <p>Doporučený příjem:</p>
+                            <strong id="goalDeficit">0 kcal</strong>
+                            <p style="font-size: 0.95rem; color: var(--text-light);">
+                                Mírný deficit cca 400 kcal. Ideální pro dlouhodobé a udržitelné hubnutí.
+                            </p>
+                        </div>
+
+                        <div class="goal-card surplus">
+                            <h6>Chci udržet váhu / regenerovat</h6>
+                            <p>Doporučený příjem:</p>
+                            <strong id="goalSurplus">0 kcal</strong>
+                            <p style="font-size: 0.95rem; color: var(--text-light);">
+                                Udržovací příjem + malá rezerva pro regeneraci a výkon.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SEKCE: STAŽENÍ APLIKACE -->
+            <section style="margin-top: 50px; padding: 30px; background: #fdfbf7; border-radius: 12px; border: 1px solid #e8e2d5; text-align: center;">
+                <h2 style="font-family: 'Playfair Display', serif; color: var(--primary); margin-bottom: 12px;">Stáhněte si naši aplikaci</h2>
+                <p style="color: var(--text-light); max-width: 500px; margin: 0 auto 20px auto; font-size: 1.05rem;">
+                    Mějte recepty, jídelníčky i kalkulačku neustále po ruce v kapse. Stáhněte si mobilní aplikaci Koláč od Niky pro iOS i Android.
+                </p>
+                <a href="#" class="calc-btn" style="display: inline-block; text-decoration: none; padding: 12px 28px;">Stáhnout aplikaci (APK / iOS)</a>
+            </section>
+
+            <section style="margin-top: 30px;">
+                <h2 class="section-title">Jak s čísly pracovat?</h2>
+                <p style="margin-bottom: 16px;">
+                    <strong>BMR</strong> je energie, kterou tvé tělo spálí úplně v klidu. Nikdy bys neměla jíst dlouhodobě méně, než je tato hodnota.
+                </p>
+                <p>
+                    <strong>TDEE</strong> je tvůj skutečný denní výdej včetně pohybu a práce. Při hubnutí je ideální jíst mírně pod TDEE (300–500 kcal), ne drasticky málo.
+                </p>
+            </section>
+        </main>
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="sidebar-widget">
+                <h3>Tip týdne</h3>
+                <p>Neřeš jen kalorie. Důležitý je i sytící index jídla – kombinace bílkovin + vlákniny tě zasytí mnohem déle.</p>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>Newsletter</h3>
+                <p>Chceš recepty a tipy přímo do mailu?</p>
+                <input type="email" placeholder="tvuj@email.cz">
+                <button class="btn btn-block" style="margin-top: 10px;">Odebírat</button>
+            </div>
+        </aside>
+    </div>
+
+    <!-- PATIČKA -->
+    <footer class="main-footer">
+        <p>&copy; 2026 Koláč od Niky. Všechna práva vyhrazena.</p>
+    </footer>
+
+    <!-- Tlačítko zpět nahoru -->
+    <a href="#" class="scroll-top-btn" title="Nahoru">↑</a>
+
+    <!-- SKRIPT PRO VÝPOČET -->
+
+</body>
+</html>

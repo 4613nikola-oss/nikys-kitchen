@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="utf-8">
+    <title>Koláč od Niky</title>
+    <link rel="stylesheet" href="Recept.css">
+</head>
+<body>
+
+    <!-- Navigace zůstává přes celou šířku -->
+    <nav class="main-navigation">
+        <ul>
+            <li><a href="index.html" title="Domů">Domů</a></li>
+            <li><a href="slane.html" title="Slané">Slané</a></li>
+            <li><a href="sladke.html" title="Sladké">Sladké</a></li>
+            <li><a href="clanky.html" title="Články">Články</a></li>
+            <li><a href="galerie.html" title="Galerie">Galerie</a></li>
+        </ul>
+    </nav>
+
+    <!-- TADY ZAČÍNÁ KONTEJNER PRO ZAROVNÁNÍ OBSAHU -->
+    <main class="site-container">
+
+        <h1>Koláč od Niky</h1>
+
+        <h2>Tajemství chuti ukryté v tradici</h2>
+
+        <p>
+            <strong>Zapomeňte na obyčejné slané koláče, není to jen obyčejný recept !!!</strong>
+            <br><strong>Rodinná receptura</strong>, která kombinuje jemnost cukety s poctivým základem z brambor.
+            <br>Každé sousto v sobě nese dokonalou <strong>harmonii</strong> táhnoucí se <strong>mozzarelly</strong>, čerstvého <strong>špenátu</strong> a výrazného <strong>česneku</strong>.
+        </p>
+
+        <div class="recipe-card">
+            <div class="card-image-wrapper">
+                <img src="Image/hotovy_kolac_uvidni.png" alt="Koláč od Niky">
+            </div>
+            <div class="card-content">
+                <div class="recipe-time">⏱️ 45 minut</div>
+                <div class="recipe-benefits">
+                    <span class="badge benefit-protein">💪 Hodně bílkovin</span>
+                    <span class="badge benefit-diet">🥑 Do diety</span>
+                </div>
+                <div class="recipe-ingredients">
+                    <strong>V lednici potřebuješ:</strong> brambory, cuketa, kuřecí mleté, mozzarella, špenát, vejce, česnek.
+                </div>
+                <div class="recipe-allergens small-allergens">
+                    Alergeny: 🥚 Vejce, 🧀 Mléko, 🥜 Oříšky
+                </div>
+            </div>
+        </div>
+
+        <p class="controls">
+            <a href="#postup" class="btn btn-success">Chci vařit !</a>
+            <a href="#nutricni-hodnoty" class="btn btn-danger">Nutriční hodnoty</a>
+        </p>
+
+        <hr>
+
+        <h2>Suroviny na <em>Koláč od Niky</em></h2>
+        
+        <div class="porce-calculator">
+            <span>Počet porcí:</span>
+            <button type="button" class="btn-porce" id="snizit-porce">-</button>
+            <span id="aktualni-porce" class="pocet-porci-cislo">4</span>
+            <button type="button" class="btn-porce" id="zvysit-porce">+</button>
+        </div>
+
+        <ul>
+            <li><span class="data-mnozstvi" data-zaklad="400">400</span> g Brambor</li>
+            <li><span class="data-mnozstvi" data-zaklad="1">1</span> ks Cukety</li>
+            <li><span class="data-mnozstvi" data-zaklad="500">500</span> g Kuřecího mletého masa</li>
+            <li><span class="data-mnozstvi" data-zaklad="200">200</span> g Mozzarelly</li>
+            <li><span class="data-mnozstvi" data-zaklad="125">125</span> g Čerstvého špenátu</li>
+            <li><span class="data-mnozstvi" data-zaklad="3">3</span> stroužky Česneku</li>
+            <li><span class="data-mnozstvi" data-zaklad="1">1</span> lžíce Majoránky</li>
+            <li><span class="data-mnozstvi" data-zaklad="4">4</span> ks Vajec</li>
+            <li><span class="data-mnozstvi" data-zaklad="30">30</span> g <strong>Piniových oříšků</strong></li>
+            <li>Sůl a pepř (podle chuti)</li>
+        </ul>
+
+        <h2 id="nutricni-hodnoty">Proč je Koláč od Niky tak super?</h2>
+        <img src="Image/kolac_rozbor.png" alt="vláčný plný proteinu a zdravý">
+
+        <ol>
+            <li><strong>Méně kalorií:</strong> Vyřazením smetany jsme výrazně snížili množství nasycených tuků.</li>
+            <li><strong>Vysoký obsah bílkovin:</strong> Kombinace kuřecího masa a vajec zaručuje, že koláč zasytí.</li>
+            <li><strong>Hydratace z cukety:</strong> Cuketa zajistí vláčnost i bez smetany.</li>
+        </ol>
+
+        <h2>Postup krok za krokem:</h2>
+        <img src="Image/seznam_veci_na_kolac.png" alt="suroviny na koláč">
+        
+        <ol>
+            <li><strong>Příprava kořenící směsi:</strong> Smíchejte sůl, pepř a sušenou majoránku.</li>
+            <li><strong>Bramborový základ:</strong> Na dno formy vyskládejte tenké plátky brambor.</li>
+            <li><strong>Pečení:</strong> Pečte v troubě na 180 °C přibližně 45 minut.</li>
+        </ol>
+
+    </main> 
+    <!-- KONTEJNER KONČÍ -->
+<script src="script.js"></script>
+</body>
+</html>
