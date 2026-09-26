@@ -136,8 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-
-    <script>
+// Kalkulačka příjmu (clanky/kalkulacka.html)
         function calculateFitness() {
             const gender = document.getElementById('gender').value;
             const weight = parseFloat(document.getElementById('weight').value);
@@ -179,4 +178,3 @@ document.addEventListener("DOMContentLoaded", () => {
             resultsBox.style.display = 'block';
             resultsBox.scrollIntoView({ behavior: 'smooth' });
         }
-    </script>
