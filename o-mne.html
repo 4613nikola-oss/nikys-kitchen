@@ -7,17 +7,28 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav class="main-navigation">
+    <header class="main-navigation">
         <div class="nav-container">
             <a href="index.html" class="logo">Niky's Kitchen</a>
-            <ul class="nav-list">
-                <li><a href="index.html">Domů</a></li>
-                <li><a href="slane.html">Recepty</a></li>
-                <li><a href="clanky.html">Články</a></li>
-                <li><a href="o-mne.html" class="active">O mně</a></li>
-            </ul>
+            <nav aria-label="Hlavní menu">
+                <ul class="nav-list">
+                    <li><a href="index.html">Domů</a></li>
+                    <li class="dropdown">
+                        <a href="slane.html">Recepty ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="slane.html">Slané</a></li>
+                            <li><a href="sladke.html">Sladké</a></li>
+                            <li><a href="napoje.html">Nápoje</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="clanky.html">Články</a></li>
+                    <li><a href="https://4613nikola-oss.github.io/jidlo-od-a-z/">Aplikace</a></li>
+                    <li><a href="galerie.html">Galerie</a></li>
+                    <li><a href="o-mne.html" class="active" aria-current="page">O mně</a></li>
+                </ul>
+            </nav>
         </div>
-    </nav>
+    </header>
     <div class="site-wrapper">
         <div class="page-header">
             <h1 class="section-title">O mně</h1>
@@ -29,7 +40,7 @@
         <a href="index.html" class="back-link">← Zpět na hlavní stránku</a>
     </div>
     <footer class="main-footer">
-        <p>&copy; 2026 Niky's Kitchen.</p>
+        <p>&copy; 2026 Niky's Kitchen. Všechna práva vyhrazena.</p>
     </footer>
     <script src="js/main.js"></script>
 </body>

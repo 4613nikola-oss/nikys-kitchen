@@ -3,33 +3,31 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulačka a Aplikace | Koláč od Niky</title>
+    <title>Kalkulačka a Aplikace | Niky's Kitchen</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
     <!-- NAVIGACE -->
     <header class="main-navigation">
         <div class="nav-container">
-            <a href="index.html" class="logo">Koláč od Niky</a>
-            <nav>
+            <a href="../index.html" class="logo">Niky's Kitchen</a>
+            <nav aria-label="Hlavní menu">
                 <ul class="nav-list">
-                    <li><a href="index.html">Domů</a></li>
-                    
+                    <li><a href="../index.html">Domů</a></li>
                     <li class="dropdown">
-                        <a href="#">Recepty ▾</a>
+                        <a href="../slane.html">Recepty ▾</a>
                         <ul class="dropdown-menu">
-                            <li><a href="slane.html">Slané</a></li>
-                            <li><a href="sladke.html">Sladké</a></li>
-                            <li><a href="napoje.html">Nápoje</a></li>
+                            <li><a href="../slane.html">Slané</a></li>
+                            <li><a href="../sladke.html">Sladké</a></li>
+                            <li><a href="../napoje.html">Nápoje</a></li>
                         </ul>
                     </li>
-
-                    <li><a href="clanky.html">Články</a></li>
-                    <li><a href="o-mne.html">O mně</a></li>
-                    <li><a href="kalkulacka.html" class="active">Kalkulačka</a></li>
-                    <li><a href="galerie.html">Galerie</a></li>
+                    <li><a href="../clanky.html" class="active" aria-current="page">Články</a></li>
+                    <li><a href="https://4613nikola-oss.github.io/jidlo-od-a-z/">Aplikace</a></li>
+                    <li><a href="../galerie.html">Galerie</a></li>
+                    <li><a href="../o-mne.html">O mně</a></li>
                 </ul>
             </nav>
         </div>
@@ -83,7 +81,7 @@
 
                 <!-- Výsledky -->
                 <div id="calcResults" class="calc-results" style="display: none;">
-                    <h2 style="font-family: 'Playfair Display', serif; color: var(--primary); margin-bottom: 16px;">Vaše výsledky</h2>
+                    <h2 style="font-family: 'Playfair Display', serif; color: var(--primary); margin-bottom: 16px;">Tvoje výsledky</h2>
                     
                     <p><strong>BMR (bazální metabolismus):</strong> <span id="resBMR">0</span> kcal</p>
                     <p><strong>TDEE (celkový denní výdej):</strong> <span id="resMaintain">0</span> kcal</p>
@@ -112,17 +110,17 @@
 
             <!-- SEKCE: STAŽENÍ APLIKACE -->
             <section style="margin-top: 50px; padding: 30px; background: #fdfbf7; border-radius: 12px; border: 1px solid #e8e2d5; text-align: center;">
-                <h2 style="font-family: 'Playfair Display', serif; color: var(--primary); margin-bottom: 12px;">Stáhněte si naši aplikaci</h2>
+                <h2 style="font-family: 'Playfair Display', serif; color: var(--primary); margin-bottom: 12px;">Vyzkoušej appku Jídlo od A–Z</h2>
                 <p style="color: var(--text-light); max-width: 500px; margin: 0 auto 20px auto; font-size: 1.05rem;">
-                    Mějte recepty, jídelníčky i kalkulačku neustále po ruce v kapse. Stáhněte si mobilní aplikaci Koláč od Niky pro iOS i Android.
+                    Spočítá ti příjem, rozdělí ho do jídel, najde recepty podle ledničky a sestaví nákupní seznam. Na mobilu si ji přidáš na plochu jako aplikaci.
                 </p>
-                <a href="#" class="calc-btn" style="display: inline-block; text-decoration: none; padding: 12px 28px;">Stáhnout aplikaci (APK / iOS)</a>
+                <a href="https://4613nikola-oss.github.io/jidlo-od-a-z/" class="calc-btn" style="display: inline-block; text-decoration: none; padding: 12px 28px;">Otevřít aplikaci →</a>
             </section>
 
             <section style="margin-top: 30px;">
                 <h2 class="section-title">Jak s čísly pracovat?</h2>
                 <p style="margin-bottom: 16px;">
-                    <strong>BMR</strong> je energie, kterou tvé tělo spálí úplně v klidu. Nikdy bys neměla jíst dlouhodobě méně, než je tato hodnota.
+                    <strong>BMR</strong> je energie, kterou tvé tělo spálí úplně v klidu. Tvůj příjem by dlouhodobě neměl klesnout pod tuto hodnotu.
                 </p>
                 <p>
                     <strong>TDEE</strong> je tvůj skutečný denní výdej včetně pohybu a práce. Při hubnutí je ideální jíst mírně pod TDEE (300–500 kcal), ne drasticky málo.
@@ -141,20 +139,21 @@
                 <h3>Newsletter</h3>
                 <p>Chceš recepty a tipy přímo do mailu?</p>
                 <input type="email" placeholder="tvuj@email.cz">
-                <button class="btn btn-block" style="margin-top: 10px;">Odebírat</button>
+                <button class="calc-btn btn-block" style="margin-top: 10px;">Odebírat</button>
             </div>
         </aside>
     </div>
 
     <!-- PATIČKA -->
     <footer class="main-footer">
-        <p>&copy; 2026 Koláč od Niky. Všechna práva vyhrazena.</p>
+        <p>&copy; 2026 Niky's Kitchen. Všechna práva vyhrazena.</p>
     </footer>
 
     <!-- Tlačítko zpět nahoru -->
     <a href="#" class="scroll-top-btn" title="Nahoru">↑</a>
 
     <!-- SKRIPT PRO VÝPOČET -->
+    <script src="../js/main.js"></script>
 
 </body>
-</html>
+</html>

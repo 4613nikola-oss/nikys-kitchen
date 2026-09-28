@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Koláč od Niky</title>
+    <title>Niky's Kitchen – zdravé recepty, pečení a kalkulačka kalorií</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -12,15 +12,22 @@
    <!-- HLAVNÍ NAVIGACE -->
     <header class="main-navigation">
         <div class="nav-container">
-            <a href="index.html" class="logo">Koláč od Niky</a>
-            <nav>
+            <a href="index.html" class="logo">Niky's Kitchen</a>
+            <nav aria-label="Hlavní menu">
                 <ul class="nav-list">
-                    <li><a href="index.html" class="active">Domů</a></li>
-                    <li><a href="slane.html">Recepty</a></li>
-                    <li><a href="aplikace.html">Aplikace</a></li>
+                    <li><a href="index.html" class="active" aria-current="page">Domů</a></li>
+                    <li class="dropdown">
+                        <a href="slane.html">Recepty ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="slane.html">Slané</a></li>
+                            <li><a href="sladke.html">Sladké</a></li>
+                            <li><a href="napoje.html">Nápoje</a></li>
+                        </ul>
+                    </li>
                     <li><a href="clanky.html">Články</a></li>
-                    <li><a href="o-mne.html">O mně</a></li>
+                    <li><a href="https://4613nikola-oss.github.io/jidlo-od-a-z/">Aplikace</a></li>
                     <li><a href="galerie.html">Galerie</a></li>
+                    <li><a href="o-mne.html">O mně</a></li>
                 </ul>
             </nav>
         </div>
@@ -47,7 +54,7 @@
                     <span class="recipe-subtitle">Domácí kulinárium</span>
                     <div class="carousel-slide active">
                         <h1>Slané a sladké pečení</h1>
-                        <p class="method-text">Objevte recepty plné chuti, které zvládne upéct každý s láskou a lehkostí.</p>
+                        <p class="method-text">Objev recepty plné chuti, které zvládneš upéct s láskou a lehkostí.</p>
                     </div>
                     <div class="carousel-slide">
                         <h1>Chytrý koncept</h1>
@@ -80,7 +87,7 @@
 
                         <div id="nejnovejsi" class="tab-content active">
                             <h2>Cuketovo-bramborový koláč od Niky</h2>
-                            <p class="method-text">Vynikající, vláčný a sytý koláč plný skvělých surovin. Vyzkoušejte domácí pečení, které provoní celou kuchyni.</p>
+                            <p class="method-text">Vynikající, vláčný a sytý koláč plný skvělých surovin. Vyzkoušej domácí pečení, které provoní celou kuchyni.</p>
                             
                             <!-- Kalkulačka porcí -->
                             <div class="portions-calculator">
@@ -105,7 +112,7 @@
 
                         <div id="clanky-tab" class="tab-content" style="display: none;">
                             <h2>Nejnovější články z kulinária</h2>
-                            <p class="method-text">Přečtěte si zajímavé tipy o pečení, výběru surovin a tricích pro vylepšení vašich receptů.</p>
+                            <p class="method-text">Přečti si tipy o pečení, výběru surovin a tricích, které vylepší tvoje recepty.</p>
                         </div>
                     </section>
 
@@ -120,7 +127,7 @@
                             </div>
                             <div class="benefit-card">
                                 <div class="benefit-icon">⏱️</div>
-                                <h3>Ušetřete čas</h3>
+                                <h3>Ušetři čas</h3>
                                 <p class="method-text">Chytrý koncept vaření pro každý den.</p>
                             </div>
                             <div class="benefit-card">
@@ -133,15 +140,15 @@
 
                     <!-- Výzva ke stažení aplikace -->
                     <section class="recipe-box-paper" style="text-align: center; background: linear-gradient(135deg, #3d5233 0%, #2e3e26 100%); color: #fff;">
-                        <h2 style="color: #fff; margin-bottom: 8px;">Mějte recepty stále u sebe</h2>
-                        <p class="method-text" style="color: #e5e0d5; margin-bottom: 16px;">Stáhněte si naši aplikaci a získejte přístup ke všem receptům a plánům offline.</p>
-                        <a href="kalkulacka.html" class="btn" style="background: #fff; color: var(--primary);">Stáhnout aplikaci</a>
+                        <h2 style="color: #fff; margin-bottom: 8px;">Měj recepty stále u sebe</h2>
+                        <p class="method-text" style="color: #e5e0d5; margin-bottom: 16px;">Appka Jídlo od A–Z ti spočítá denní příjem, navrhne jídla na celý den a sestaví nákupní seznam. Na mobilu si ji přidáš na plochu.</p>
+                        <a href="https://4613nikola-oss.github.io/jidlo-od-a-z/" class="btn" style="background: #fff; color: var(--primary);">Otevřít aplikaci</a>
                     </section>
 
                     <!-- Galerie -->
                     <section class="recipe-box-paper">
-                        <h2>Galerie našich pečených dobrot</h2>
-                        <p class="method-text">Prohlédněte si fotky od vás, našich pekařů.</p>
+                        <h2>Galerie pečených dobrot</h2>
+                        <p class="method-text">Prohlédni si, co se u nás peče.</p>
                         <div class="gallery-carousel-preview" style="background: var(--bg-color); height: 160px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-weight: 600;">
                             [ Interaktivní karusel galerie ]
                         </div>
@@ -164,8 +171,8 @@
                     <!-- Mobilní aplikace -->
                     <div class="recipe-box-paper">
                         <h2>Mobilní aplikace</h2>
-                        <p class="method-text">Všechny recepty a nákupní seznamy pohodlně v kapse.</p>
-                        <a href="kalkulacka.html" class="btn btn-primary card-btn">Více</a>
+                        <p class="method-text">Kalkulačka, jídelníček na den a nákupní seznam pohodlně v kapse.</p>
+                        <a href="https://4613nikola-oss.github.io/jidlo-od-a-z/" class="btn btn-primary card-btn">Otevřít aplikaci →</a>
                     </div>
 
                     <!-- 7denní plán -->
@@ -177,8 +184,8 @@
 
                     <!-- Sociální sítě -->
                     <div class="recipe-box-paper">
-                        <h2>Sledujte mě</h2>
-                        <p class="method-text" style="margin-bottom: 12px;">Buďte v kontaktu na sociálních sítích:</p>
+                        <h2>Sleduj mě</h2>
+                        <p class="method-text" style="margin-bottom: 12px;">Buďme v kontaktu na sociálních sítích:</p>
                         <div class="social-icons">
                             <a href="#" class="social-icon" title="Instagram">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
@@ -199,7 +206,7 @@
 
     <!-- PATIČKA -->
     <footer class="main-footer">
-        <p>&copy; 2026 Koláč od Niky. Všechna práva vyhrazena.</p>
+        <p>&copy; 2026 Niky's Kitchen. Všechna práva vyhrazena.</p>
     </footer>
 
     <!-- Tlačítko zpět nahoru -->

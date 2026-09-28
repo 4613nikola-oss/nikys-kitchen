@@ -29,28 +29,38 @@
     </style>
 </head>
 <body>
-    <nav class="main-navigation">
+    <header class="main-navigation">
         <div class="nav-container">
-            <a href="index.html" class="logo">Niky's Kitchen</a>
-            <ul class="nav-list">
-                <li><a href="index.html">Domů</a></li>
-                <li><a href="slane.html">Recepty</a></li>
-                <li><a href="clanky.html">Články</a></li>
-                <li><a href="galerie.html">Galerie</a></li>
-                <li><a href="o-mne.html">O mně</a></li>
-            </ul>
+            <a href="../index.html" class="logo">Niky's Kitchen</a>
+            <nav aria-label="Hlavní menu">
+                <ul class="nav-list">
+                    <li><a href="../index.html">Domů</a></li>
+                    <li class="dropdown">
+                        <a href="../slane.html" class="active" aria-current="page">Recepty ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../slane.html">Slané</a></li>
+                            <li><a href="../sladke.html">Sladké</a></li>
+                            <li><a href="../napoje.html">Nápoje</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../clanky.html">Články</a></li>
+                    <li><a href="https://4613nikola-oss.github.io/jidlo-od-a-z/">Aplikace</a></li>
+                    <li><a href="../galerie.html">Galerie</a></li>
+                    <li><a href="../o-mne.html">O mně</a></li>
+                </ul>
+            </nav>
         </div>
-    </nav>
+    </header>
 
     <main class="article-wrapper">
-        <img src="images/hotovy_kolac_uvidni.png" alt="Ginger shot" class="article-hero-image">
+        <img src="../images/hotovy_kolac_uvidni.png" alt="Ginger shot" class="article-hero-image">
         <div class="article-body">
             <span class="article-tag">Imunita a zdraví</span>
             <h1>Proč si ráno dát domácí ginger shot a jak si ho vyrobit</h1>
             
             <p>Malá sklenička, která v tobě probudí i mrtvého. Zázvorové shoty se staly obrovským hitem, ale kupovat si je v kavárnách nebo obchodech leze do peněz a často jsou plné zbytečného cukru. Vyrobit si vlastní, poctivý ginger shot doma přitom zabere jen pár minut.</p>
 
-            <h2>Síla kořene v jedné hltochové skleničce</h2>
+            <h2>Síla kořene v jedné malé skleničce</h2>
             <p>Zázvor obsahuje gingerol – látku s mocnými antioxidačními a protizánětlivými účinky. Když k němu přidáš čerstvou citronovou šťávu a kapku medu, získáš ranní vzpruhu, která nastartuje metabolismus a skvěle prohřeje tělo před odchodem do práce nebo po ranním běhu.</p>
 
             <ul>
@@ -59,7 +69,7 @@
                 <li><strong>Přírodní energie:</strong> Žádný umělý kofein, jen čistá síla kořene a citrusů.</li>
             </ul>
 
-            <a href="napoje.html#gingershot" class="back-link">← Přejít rovnou na recept na Ginger Shot</a>
+            <a href="../napoje.html" class="back-link">← Přejít rovnou na recept na Ginger Shot</a>
         </div>
     </main>
 

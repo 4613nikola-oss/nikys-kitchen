@@ -5,6 +5,7 @@
     --card-bg: #ffffff;
     --text: #2c2c2c;
     --text-muted: #6b6b6b;
+    --text-light: #6b6b6b;
     --border-color: #e3ded5;
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Plus Jakarta Sans', sans-serif;
@@ -483,3 +484,239 @@ ul { list-style: none; }
     color: var(--primary, #3b4d38);
     border: 1px solid var(--primary, #3b4d38);
 }
+
+
+/* =========================================================
+   DOPLNĚNÉ STYLY (sjednocení webu, 2026-09-28)
+   ========================================================= */
+
+img { max-width: 100%; height: auto; }
+
+/* --- ROZBALOVACÍ MENU (Recepty ▾) --- */
+.nav-list { align-items: center; }
+.dropdown { position: relative; }
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -1rem;
+    min-width: 10rem;
+    padding: 0.5rem 0;
+    background: var(--card-bg);
+    border: 0.0625rem solid var(--border-color);
+    border-radius: 0.75rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
+    z-index: 200;
+}
+/* Neviditelný „můstek“, aby menu nezmizelo při přejíždění myší */
+.dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -0.75rem; left: 0; right: 0;
+    height: 0.75rem;
+}
+.dropdown-menu a { display: block; padding: 0.5rem 1rem; }
+.dropdown-menu a:hover { background: var(--bg-color); }
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu { display: block; }
+
+/* --- MENU NA MOBILU --- */
+@media (max-width: 56.25rem) {
+    .nav-container { flex-wrap: wrap; gap: 0.5rem; padding: 0.9rem 1rem; }
+    .nav-container nav { width: 100%; overflow-x: auto; }
+    .nav-list { gap: 1rem; white-space: nowrap; padding-bottom: 0.25rem; }
+    /* Na dotykových displejích se podmenu nerozbaluje – odkaz vede rovnou na Slané */
+    .dropdown-menu { display: none !important; }
+}
+
+/* --- HLAVIČKY STRÁNEK --- */
+.page-header { margin-bottom: 2rem; }
+.section-title {
+    font-family: var(--font-heading);
+    color: var(--primary);
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+.section-subtitle { color: var(--text-muted); font-size: 1.1rem; max-width: 40rem; }
+
+.blog-post h1 {
+    font-family: var(--font-heading);
+    color: var(--primary);
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+.blog-post h2, .blog-post h3 { font-family: var(--font-heading); }
+.blog-post ul, .card-box ul, .card-box ol { list-style: disc; padding-left: 1.5rem; }
+
+@media (max-width: 48rem) {
+    .section-title, .blog-post h1 { font-size: 1.7rem; }
+    .blog-post, .card-box { padding: 1.5rem !important; }
+}
+
+/* --- STRÁNKA S BOČNÍM PANELEM (Články, Kalkulačka) --- */
+.site-wrapper:has(> .sidebar) {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    gap: 2rem;
+    align-items: start;
+}
+@media (max-width: 56.25rem) {
+    .site-wrapper:has(> .sidebar) { grid-template-columns: 1fr; }
+}
+.sidebar { display: flex; flex-direction: column; gap: 1.5rem; }
+.sidebar-widget {
+    background: var(--card-bg);
+    border: 0.0625rem solid var(--border-color);
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+.sidebar-widget h3 {
+    font-family: var(--font-heading);
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+}
+.sidebar-widget p { color: var(--text-muted); font-size: 0.95rem; }
+.sidebar-widget input[type="email"] {
+    width: 100%;
+    padding: 0.6rem;
+    margin-top: 0.6rem;
+    border: 0.0625rem solid var(--border-color);
+    border-radius: 0.5rem;
+    font: inherit;
+}
+
+/* --- KARTY V MŘÍŽCE (Slané, Sladké, Nápoje) --- */
+.cards-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1.5rem;
+}
+.card-box {
+    background: var(--card-bg);
+    border: 0.0625rem solid var(--border-color);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.02);
+}
+.card-box h3 {
+    font-family: var(--font-heading);
+    color: var(--primary);
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+.card-box p { color: var(--text-muted); line-height: 1.6; }
+
+/* --- KARTA RECEPTU --- */
+.recipe-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    background: var(--card-bg);
+    border: 0.0625rem solid var(--border-color);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.02);
+}
+@media (max-width: 48rem) { .recipe-card { grid-template-columns: 1fr; } }
+.recipe-image { width: 100%; height: 100%; min-height: 15rem; object-fit: cover; }
+.recipe-content { padding: 2rem; display: flex; flex-direction: column; gap: 0.8rem; }
+.recipe-content h2 { font-family: var(--font-heading); color: var(--primary); font-size: 1.6rem; }
+.recipe-content p { color: var(--text-muted); line-height: 1.6; }
+.recipe-tag {
+    align-self: flex-start;
+    display: inline-block;
+    background: var(--border-color);
+    color: var(--primary);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.3rem 0.8rem;
+    border-radius: 1.5rem;
+}
+.recipe-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+.recipe-details h4 { color: var(--primary); margin-bottom: 0.4rem; }
+.recipe-details ul { list-style: disc; padding-left: 1.3rem; line-height: 1.8; }
+.recipe-details ol { padding-left: 1.3rem; line-height: 1.8; }
+
+/* --- ODKAZ ZPĚT --- */
+.back-link {
+    display: inline-block;
+    margin-top: 2rem;
+    color: var(--primary);
+    font-weight: 600;
+}
+.back-link:hover { text-decoration: underline; }
+
+/* --- OBECNÁ TLAČÍTKA --- */
+.calc-btn {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    border: 0.0625rem solid var(--primary);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s, color 0.2s;
+}
+.calc-btn:hover { background: var(--primary-hover); }
+.calc-btn.btn-outline { background: transparent; color: var(--primary); }
+.calc-btn.btn-outline:hover { background: var(--primary); color: #fff; }
+.btn-block { display: block; width: 100%; }
+
+/* --- KALKULAČKA --- */
+.calculator-box {
+    background: var(--card-bg);
+    border: 0.0625rem solid var(--border-color);
+    border-radius: 1rem;
+    padding: 2rem;
+}
+.calc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+.calc-grid label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.3rem; }
+.calc-grid input, .calc-grid select {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 0.0625rem solid var(--border-color);
+    border-radius: 0.5rem;
+    font: inherit;
+    background: #fff;
+}
+.calc-grid input:focus, .calc-grid select:focus { outline: 2px solid var(--primary); outline-offset: 1px; }
+.calc-results {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 0.0625rem solid var(--border-color);
+}
+.calc-results > p { margin-bottom: 0.4rem; }
+.goals-split {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: 1rem;
+    margin-top: 1.2rem;
+}
+.goal-card { background: var(--bg-color); border-radius: 0.75rem; padding: 1.2rem; }
+.goal-card h6 { font-size: 1rem; color: var(--primary); margin-bottom: 0.3rem; }
+.goal-card strong { display: block; font-size: 1.5rem; color: var(--primary); margin: 0.3rem 0; }
+
+/* --- DETAIL RECEPTU (recepty/Kolac.html) --- */
+.site-container { max-width: 50rem; margin: 0 auto; padding: 2rem; }
+.site-container h1, .site-container h2 { font-family: var(--font-heading); color: var(--primary); margin: 1.5rem 0 0.8rem; }
+.site-container ul, .site-container ol { padding-left: 1.5rem; line-height: 1.8; }
+.site-container ul { list-style: disc; }
+.site-container img { border-radius: 0.75rem; margin: 1rem 0; }
