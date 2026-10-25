@@ -1,4 +1,4 @@
-# Niky's Kitchen – původní web s blogem
+﻿# Niky's Kitchen – původní web s blogem
 
 První verze webu **Niky's Kitchen** v čistém HTML, CSS a JavaScriptu: recepty (slané, sladké, nápoje), články, galerie a stránka O mně.
 
@@ -53,7 +53,7 @@ clanky/        jednotlivé články
 recepty/       detailní recepty
 css/style.css  vzhled
 js/main.js     menu a drobné funkce
-images/, fonts/
+images/        obrázky (písma se načítají z Google Fonts)
 ```
 
 ## Spuštění
