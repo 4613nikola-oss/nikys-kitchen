@@ -25,6 +25,14 @@ Hodně lidí chce jíst zdravě, ale v praxi narazí na tohle:
 - krátké texty s možností rozkliknout víc, čeština a angličtina, důraz na přístupnost (i pro lidi se zrakovým postižením),
 - informace jen z ověřených zdrojů, bez zdravotních slibů.
 
+## Proč se kouknout na web
+
+- **Recepty pro lidi, kteří nemají čas.** Krátké postupy, jasné suroviny, přepočet porcí jedním klikem.
+- **Jeden recept, tři varianty.** Stejný základ upravíš podle toho, jestli chceš zhubnout, udržet formu nebo nabrat, takže se nevaří zvlášť pro každého.
+- **Články, které se dají přečíst za pár minut.** Nejdřív to hlavní „v kostce“, víc až po rozkliknutí, vždy s ověřenými zdroji.
+- **Bez výčitek a bez zákazů.** Zdravé jídlo může být i sladké, a proto má každý plán svou „sladkou tečku“.
+- **Pro co nejvíc lidí.** Čeština i angličtina, alergeny u každého receptu, přizpůsobené mobilu, s ohledem na čtečky obrazovky.
+- **Navazuje na appku.** Z receptu se dostaneš rovnou do appky Jídlo od A–Z, kde si spočítáš, kolik toho sníst.
 ## Niky's Kitchen – jak to spolu souvisí
 
 Niky's Kitchen má tři části. Cíl je pořád stejný: ulehčit lidem zdravé stravování bez složitého počítání a bez výčitek.
