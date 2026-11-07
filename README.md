@@ -1,4 +1,4 @@
-﻿# Niky's Kitchen – původní web s blogem
+# Niky's Kitchen – původní web s blogem
 
 První verze webu **Niky's Kitchen** v čistém HTML, CSS a JavaScriptu: recepty (slané, sladké, nápoje), články, galerie a stránka O mně.
 
@@ -39,7 +39,7 @@ Niky's Kitchen má tři části. Cíl je pořád stejný: ulehčit lidem zdravé
 
 | Část | Co to je | Stav |
 |------|----------|------|
-| 🌐 **Web s blogem** | recepty a krátké články o výživě, česky i anglicky | tento původní web → nový web ve vývoji |
+| 🌐 **Web s blogem** | recepty a krátké články o výživě, česky i anglicky | tento původní web → nový web online: https://4613nikola-oss.github.io/nikys-kitchen-web/ |
 | 📱 **Appka Jídlo od A–Z** | kalkulačka příjmu, plán jídel, recepty z ledničky, nákupní seznam | online: https://4613nikola-oss.github.io/jidlo-od-a-z/ |
 | 🛒 **Obchod** | digitální produkty: e-booky, online kuchařka, jídelní plány, kurzy | připravujeme |
 
